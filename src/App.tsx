@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MenuButton from './components/MenuButton';
 import TossSection from './components/TossSection';
 import ServiceSection from './components/ServiceSection';
 import FeatureSection from './components/FeatureSection';
@@ -20,28 +19,17 @@ import Scribble from './pages/Scribble';
 import Particles from './pages/Particles';
 import NakwonCalculator from './pages/NakwonCalculator';
 import Sections from './pages/Sections';
-
+import Dashboard from './pages/Dashboard';
 import './App.css';
-
-const HomePage = () => {
-  return (
-    <div className="w-full">
-      <TossSection imageUrl="/img/sample.jpg" />
-      <ServiceSection />
-      <FeatureSection />
-      <WheelSection />
-      <ExpandSection />
-    </div>
-  );
-};
 
 const App: React.FC = () => {
   return (
     <Router>
       <div className="w-full min-h-screen">
-        <MenuButton />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/nakwon" element={<NakwonCalculator />} />
           <Route path="/terminate-text" element={<TerminateTextDemo />} />
           <Route path="/move-image" element={<MoveImage />} />
           <Route path="/3d-text" element={<ThreeDText />} />
@@ -54,7 +42,6 @@ const App: React.FC = () => {
           <Route path="/motion-examples" element={<MotionExamples />} />
           <Route path="/scribble" element={<Scribble />} />
           <Route path="/particles" element={<Particles />} />
-          <Route path="/nakwon" element={<NakwonCalculator />} />
           <Route path="/sections" element={<Sections />} />
         </Routes>
       </div>
