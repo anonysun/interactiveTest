@@ -48,3 +48,8 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* 동적 색상 변경을 위한 CSS 변수 */
+:root {
+  --accent-color: #3B82F6;
+}
